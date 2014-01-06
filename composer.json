@@ -1,0 +1,28 @@
+{
+    "name": "earlhickey/pg-mailchimp",
+    "description": "ZF2 module for MailChimp 2.0 API",
+    "type": "library",
+    "keywords": [
+        "zf2"
+    ],
+    "homepage": "https://github.com/earlhickey/pg-mailchimp",
+    "authors": [
+        {
+            "name": "Patrick Groot",
+            "email": "pgroot@gmail.com",
+            "homepage": "http://pg13.nl/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": ">=2.2"
+    },
+    "autoload": {
+        "psr-0": {
+            "PgMailChimp": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}

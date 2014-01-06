@@ -1,0 +1,14 @@
+<?php
+
+return array(
+    'zfr_mailchimp' => array(
+        /**
+         * Specify your MailChimp API key. You can find it on your account
+         */
+        // 'key' => '',
+        /**
+         * Specify your MailChimp list id.
+         */
+        // 'listId' => ''
+    )
+);
