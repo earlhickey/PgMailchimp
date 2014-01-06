@@ -5,7 +5,7 @@
  *
  */
 
-namespace MailChimp\Factory;
+namespace PgMailChimp\Factory;
 
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;

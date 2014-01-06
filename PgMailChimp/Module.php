@@ -3,7 +3,7 @@
  *
  */
 
-namespace MailChimp;
+namespace PgMailChimp;
 
 use Zend\ModuleManager\Feature;
 

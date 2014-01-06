@@ -1,6 +1,6 @@
 <?php
 
-namespace SRG\Service;
+namespace PgMailChimp\Client;
 
 use SRG\EventManager\EventProvider;
 use Zend\Json\Json;
@@ -10,7 +10,7 @@ use Zend\Json\Json;
  *
  * @author pG
  * @version 1.0
- * @package Srg\Service
+ * @package PgMailChimp\Client
  * @copyright 2012
  */
 class MailChimp extends EventProvider
@@ -18,10 +18,10 @@ class MailChimp extends EventProvider
     /**
      * Station List Id's
      */
-    const SRG           = '{"apiKey":"f3ef613a4cc3cadeee8124e44d652792-us3","listId":""}';
-    const SKYRADIO      = '{"apiKey":"cba81f873f3ee07b7fcb71d62465b644-us3","listId":"a253137984"}';
-    const RADIOVERONICA = '{"apiKey":"4d51114818cf91a1af92bc74bb1b1e64-us3","listId":"ea16e52d64"}';
-    const CLASSICFM     = '{"apiKey":"41a4aa4b4cd28cb80362b6bef3dd0ef3-us3","listId":"9ce349c2d2"}';
+    const SRG           = '{"apiKey":"","listId":""}';
+    const SKYRADIO      = '{"apiKey":"","listId":""}';
+    const RADIOVERONICA = '{"apiKey":"","listId":""}';
+    const CLASSICFM     = '{"apiKey":"","listId":""}';
 
     /**
      * MailChimp API version
@@ -163,6 +163,7 @@ class MailChimp extends EventProvider
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, $this->verify_ssl);
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($args));
+        // todo: add proxy to config file
         if($_SERVER['REMOTE_ADDR'] != '127.0.0.1') {
 	    	curl_setopt($ch, CURLOPT_HTTPPROXYTUNNEL, 1);
 	    	curl_setopt($ch, CURLOPT_PROXYPORT, 80);
