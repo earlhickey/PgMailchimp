@@ -1,6 +1,6 @@
 <?php
 
-namespace PgMailChimp\Client;
+namespace PgMailchimp\Client;
 
 use SRG\EventManager\EventProvider;
 use Zend\Json\Json;
@@ -10,7 +10,7 @@ use Zend\Json\Json;
  *
  * @author pG
  * @version 1.0
- * @package PgMailChimp\Client
+ * @package PgMailchimp\Client
  * @copyright 2012
  */
 class MailChimp extends EventProvider
