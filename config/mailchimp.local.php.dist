@@ -5,10 +5,10 @@ return array(
         /**
          * Specify your MailChimp API key. You can find it on your account
          */
-        // 'key' => '',
+        'key' => '',
         /**
          * Specify your MailChimp list id.
          */
-        // 'listId' => ''
+        'listId' => ''
     )
 );
