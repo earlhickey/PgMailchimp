@@ -2,7 +2,7 @@
 
 namespace PgMailchimp\Client;
 
-use SRG\EventManager\EventProvider;
+use ZfcBase\EventManager\EventProvider;
 use Zend\Json\Json;
 
 /**
@@ -11,44 +11,39 @@ use Zend\Json\Json;
  * @author pG
  * @version 1.0
  * @package PgMailchimp\Client
- * @copyright 2012
+ * @copyright 2013
  */
 class MailChimp extends EventProvider
 {
-    /**
-     * Station List Id's
-     */
-    const SRG           = '{"apiKey":"","listId":""}';
-    const SKYRADIO      = '{"apiKey":"","listId":""}';
-    const RADIOVERONICA = '{"apiKey":"","listId":""}';
-    const CLASSICFM     = '{"apiKey":"","listId":""}';
-
     /**
      * MailChimp API version
      */
     const LATEST_API_VERSION = '2.0';
 
     private $apiEndpoint;
-    private $verify_ssl = false;
-    private $stationProperties;
+    private $verifySsl = false;
+    private $proxy = false;
+    private $apiKey;
+    private $listId;
 
     /**
      * Create a new instance
      * @param string $apiKey Your MailChimp API key
      */
-    function __construct($station)
+    function __construct($config)
     {
         /**
          * Set Station properties
          * @param array
          */
-        $this->stationProperties = Json::decode($station);
+        $this->apiKey = $config['key'];
+        $this->listId = $config['listId'];
 
         /**
          * set API endpoint
          * containing last part of the apiKey and api version
          */
-        $parts = explode('-', $this->stationProperties->apiKey);
+        $parts = explode('-', $this->apiKey);
         $this->apiEndpoint = sprintf('https://%s.api.mailchimp.com/%s', end($parts), self::LATEST_API_VERSION);
     }
 
@@ -64,7 +59,7 @@ class MailChimp extends EventProvider
 		$recipient = $this->preparate($recipient);
 
 		$result = $this->call('lists/subscribe', array(
-            'id'                => $this->stationProperties->listId,
+            'id'                => $this->listId,
             'email'             => array(
             	'email' => $recipient->email
             ),
@@ -94,7 +89,7 @@ class MailChimp extends EventProvider
 	public function unsubscribe($recipient)
     {
 		$result = $this->call('lists/unsubscribe', array(
-            'id'                => $this->stationProperties->listId,
+            'id'                => $this->listId,
             'email'             => array(
             	'email' => $recipient->email
             ),
@@ -150,7 +145,7 @@ class MailChimp extends EventProvider
      */
     private function _raw_request($method, $args=array())
     {
-        $args['apikey'] = $this->stationProperties->apiKey;
+        $args['apikey'] = $this->apiKey;
 
         $url = $this->apiEndpoint.'/'.$method.'.json';
 
@@ -161,10 +156,10 @@ class MailChimp extends EventProvider
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_TIMEOUT, 3);
         curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, $this->verify_ssl);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, $this->verifySsl);
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($args));
         // todo: add proxy to config file
-        if($_SERVER['REMOTE_ADDR'] != '127.0.0.1') {
+        if($this->proxy) {
 	    	curl_setopt($ch, CURLOPT_HTTPPROXYTUNNEL, 1);
 	    	curl_setopt($ch, CURLOPT_PROXYPORT, 80);
 	    	curl_setopt($ch, CURLOPT_PROXY, 'proxy');
