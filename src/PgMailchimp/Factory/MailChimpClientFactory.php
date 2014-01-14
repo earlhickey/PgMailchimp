@@ -17,12 +17,12 @@ class MailChimpClientFactory implements FactoryInterface
     {
         $config = $serviceLocator->get('Config');
 
-        if (!isset($config['zfr_mailchimp'])) {
+        if (!isset($config['mailchimp'])) {
             throw new \RuntimeException(
-                'No config was found for ZfrMailChimpModule. Did you copy the `mailchimp.local.php` file to your autoload folder?'
+                'No config was found for MailchimpModule. Did you copy the `mailchimp.local.php` file to your autoload folder?'
             );
         }
 
-        return new MailChimp($config['zfr_mailchimp']['key']);
+        return new MailChimp($config['mailchimp']);
     }
 }

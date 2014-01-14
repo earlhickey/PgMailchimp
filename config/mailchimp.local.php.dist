@@ -1,7 +1,7 @@
 <?php
 
 return array(
-    'zfr_mailchimp' => array(
+    'mailchimp' => array(
         /**
          * Specify your MailChimp API key. You can find it on your account
          */
