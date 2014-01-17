@@ -25,20 +25,4 @@ class Module implements Feature\AutoloaderProviderInterface, Feature\ConfigProvi
         return include __DIR__ . '/config/module.config.php';
     }
 
-    public function getServiceConfig()
-    {
-        return array(
-            /*'invokables' => array(
-                'Radioveronica\Service\Contestant' => 'Radioveronica\Service\Contestant',
-                'Radioveronica\Service\SmsUser' => 'Radioveronica\Service\SmsUser',
-            ),
-            'factories' => array(
-                'SRG\Service\MailChimp' => function ($sm) {
-                    $service = new \SRG\Service\MailChimp(\SRG\Service\MailChimp::RADIOVERONICA);
-                    return $service;
-                },
-            ),*/
-        );
-    }
-
 }
