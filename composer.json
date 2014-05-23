@@ -1,11 +1,11 @@
 {
-  "name" : "earlhickey/pg-mailchimp",
+  "name" : "earlhickey/zf2-mailchimp",
   "description" : "ZF2 module for MailChimp 2.0 API",
   "type" : "library",
   "keywords" : [ 
     "zf2" 
   ],
-  "homepage" : "https://github.com/earlhickey/pg-mailchimp",
+  "homepage" : "https://github.com/earlhickey/zf2-mailchimp",
   "authors" : [ {
     "name" : "Patrick Groot",
     "email" : "pgroot@gmail.com",
