@@ -3,7 +3,7 @@
  *
  */
 
-namespace PgMailchimp;
+namespace Mailchimp;
 
 use Zend\ModuleManager\Feature;
 
@@ -23,6 +23,23 @@ class Module implements Feature\AutoloaderProviderInterface, Feature\ConfigProvi
     public function getConfig()
     {
         return include __DIR__ . '/config/module.config.php';
+    }
+
+    /**
+     * Create controller plugin mailchimp
+     * Use in controller as $this->mailchimp()->functionName($data);
+     */
+    public function getControllerPluginConfig()
+    {
+        return array(
+            'factories' => array(
+                'mailchimp' => function ($sm) {
+                    $plugin = new Controller\Plugin\Mailchimp;
+                    $plugin->setService($sm->getServiceLocator()->get('Mailchimp\Client\Mailchimp'));
+                    return $plugin;
+                },
+            ),
+        );
     }
 
 }

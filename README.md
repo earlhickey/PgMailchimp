@@ -51,19 +51,7 @@ Installation
 
 ### Usage
 
-1. Create a service in your controller
-
-    ```php
-    public function getMailChimpService()
-    {
-        if(null === $this->mailChimpService) {
-            $this->mailChimpService = $this->getServiceLocator()->get('PgMailchimp\Client\MailChimp');
-        }
-        return $this->mailChimpService;
-    }
-    ```
-    
-2. Subscribe
+1. Subscribe
 
     ```php
     //  create recipient
@@ -74,7 +62,7 @@ Installation
     $recipient->dateOfBirth = '';
     $recipient->email = 'john@doe.com';
 
-    $mailChimp = $this->getMailChimpService()->subscribe($recipient);
+    $mailChimp = $this->mailchimp()->subscribe($recipient);
     ```
     
 3. Unsubscribe
@@ -84,5 +72,5 @@ Installation
     $recipient = new \stdClass();
     $recipient->email = 'john@doe.com';
 
-    $mailChimp = $this->getMailChimpService()->unsubscribe($recipient);
+    $mailChimp = $this->mailchimp()->unsubscribe($recipient);
     ```

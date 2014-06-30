@@ -3,7 +3,7 @@
 return array(
     'service_manager' => array(
         'factories' => array(
-            'PgMailchimp\Client\MailChimp' => 'PgMailchimp\Factory\MailChimpClientFactory',
+            'Mailchimp\Client\MailChimp' => 'Mailchimp\Factory\MailChimpClientFactory',
         ),
     ),
 );

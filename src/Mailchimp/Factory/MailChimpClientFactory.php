@@ -5,11 +5,11 @@
  *
  */
 
-namespace PgMailchimp\Factory;
+namespace Mailchimp\Factory;
 
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
-use PgMailchimp\Client\MailChimp;
+use Mailchimp\Client\MailChimp;
 
 class MailChimpClientFactory implements FactoryInterface
 {

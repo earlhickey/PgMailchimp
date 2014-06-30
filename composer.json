@@ -19,7 +19,7 @@
   },
   "autoload" : {
     "psr-0" : {
-      "PgMailchimp" : "src/"
+      "Mailchimp" : "src/"
     },
     "classmap" : [ 
       "./Module.php" 
