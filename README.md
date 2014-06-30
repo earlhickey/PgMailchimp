@@ -44,3 +44,45 @@ Installation
         // ...
     );
     ```
+
+2. Copy `./vendor/earlhickey/zf2-selligent/config/mailchimp.global.php.dist` to `./config/autoload/mailchimp.global.php` and change the values as desired.
+
+
+
+### Usage
+
+1. Create a service in your controller
+
+    ```php
+    public function getMailChimpService()
+    {
+        if(null === $this->mailChimpService) {
+            $this->mailChimpService = $this->getServiceLocator()->get('PgMailchimp\Client\MailChimp');
+        }
+        return $this->mailChimpService;
+    }
+    ```
+    
+2. Subscribe
+
+    ```php
+    //  create recipient
+    $recipient = new \stdClass();
+    $recipient->firstname = 'John';
+    $recipient->lastname = 'Doe';
+    $recipient->gender = '';
+    $recipient->dateOfBirth = '';
+    $recipient->email = 'john@doe.com';
+
+    $mailChimp = $this->getMailChimpService()->subscribe($recipient);
+    ```
+    
+3. Unsubscribe
+
+    ```php
+    //  create recipient
+    $recipient = new \stdClass();
+    $recipient->email = 'john@doe.com';
+
+    $mailChimp = $this->getMailChimpService()->unsubscribe($recipient);
+    ```
