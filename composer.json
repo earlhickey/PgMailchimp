@@ -1,28 +1,25 @@
 {
   "name" : "earlhickey/zf2-mailchimp",
   "description" : "ZF2 module for MailChimp 2.0 API",
-  "type" : "library",
-  "license": "BSD-3-Clause",
-  "keywords" : [ 
-    "zf2" 
-  ],
-  "homepage" : "https://github.com/earlhickey/zf2-mailchimp",
-  "authors" : [ {
-    "name" : "Patrick Groot",
-    "email" : "pgroot@gmail.com",
-    "homepage" : "http://pg13.nl/"
-  } ],
+  "version" : "1.0",
   "require" : {
     "php" : ">=5.3.3",
     "zendframework/zendframework" : "2.3.*",
     "zf-commons/zfc-base" : "0.*"
   },
+  "authors" : [ {
+    "name" : "Patrick Groot",
+    "email" : "pgroot@gmail.com",
+    "homepage" : "http://pg13.nl/"
+  } ],
+  "keywords" : [ "zf2" ],
   "autoload" : {
     "psr-0" : {
       "Mailchimp" : "src/"
     },
-    "classmap" : [ 
-      "./Module.php" 
-    ]
-  }
+    "classmap" : [ "./Module.php" ]
+  },
+  "license" : "BSD-3-Clause",
+  "type" : "library",
+  "homepage" : "https://github.com/earlhickey/zf2-mailchimp"
 }

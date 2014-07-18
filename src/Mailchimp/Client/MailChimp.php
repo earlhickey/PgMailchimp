@@ -3,7 +3,6 @@
 namespace Mailchimp\Client;
 
 use ZfcBase\EventManager\EventProvider;
-use Zend\Json\Json;
 
 /**
  * Super-simple, minimum abstraction MailChimp API v2 wrapper
