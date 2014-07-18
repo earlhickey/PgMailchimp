@@ -111,7 +111,7 @@ class MailChimp extends EventProvider
 	 * @return	array	$recipient
 	 *
 	 */
-	public function preparate($recipient)
+	private function preparate($recipient)
 	{
 	    if(isset($recipient->dateOfBirth) && $recipient->dateOfBirth != '') {
 
@@ -130,7 +130,7 @@ class MailChimp extends EventProvider
      * @param  array  $args   An array of arguments to pass to the method. Will be json-encoded for you.
      * @return array          Associative array of json decoded API response.
      */
-    public function call($method, $args=array())
+    private function call($method, $args=array())
     {
         return $this->_raw_request($method, $args);
     }

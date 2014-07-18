@@ -1,4 +1,4 @@
-pg-mailchimp
+zf2-mailchimp
 ============
 
 ZF2 MailChimp Module
@@ -24,7 +24,7 @@ Installation
     }
     ```
 
-2. Now tell composer to download ZfcUser by running the command:
+2. Now tell composer to download zf2-mailchimp by running the command:
 
     ```bash
     $ php composer.phar update
@@ -64,7 +64,7 @@ Installation
 
     $mailChimp = $this->mailchimp()->subscribe($recipient);
     ```
-    
+
 3. Unsubscribe
 
     ```php
