@@ -1,5 +1,5 @@
 {
-  "name" : "PgMailchimp",
+  "name" : "earlhickey/pg-mailchimp",
   "description" : "ZF2 module for MailChimp 2.0 API",
   "version" : "1.0",
   "require" : {
