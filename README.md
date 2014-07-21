@@ -20,7 +20,7 @@ Installation
 
     ```json
     "require": {
-        "earlhickey/PgMailchimp": "dev-master"
+        "earlhickey/pg-mailchimp": "1.*"
     }
     ```
 
@@ -45,7 +45,7 @@ Installation
     );
     ```
 
-2. Copy `./vendor/earlhickey/PgMailchimp/config/mailchimp.global.php.dist` to `./config/autoload/mailchimp.global.php` and change the values as desired.
+2. Copy `./vendor/earlhickey/PgMailchimp/config/pg-mailchimp.global.php.dist` to `./config/autoload/pg-mailchimp.global.php` and change the values as desired.
 
 
 
