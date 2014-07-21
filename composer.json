@@ -15,11 +15,11 @@
   "keywords" : [ "zf2" ],
   "autoload" : {
     "psr-0" : {
-      "PgMailChimp" : "src/"
+      "PgMailchimp" : "src/"
     },
     "classmap" : [ "./Module.php" ]
   },
   "type" : "library",
   "license" : "BSD-3-Clause",
-  "homepage" : "https://github.com/earlhickey/PgMailChimp"
+  "homepage" : "https://github.com/earlhickey/PgMailchimp"
 }

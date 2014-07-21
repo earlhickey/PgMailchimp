@@ -1,4 +1,4 @@
-PgMailChimp
+PgMailchimp
 ============
 
 ZF2 MailChimp Module
@@ -10,7 +10,7 @@ Installation
 
 #### By cloning project
 
-1. Install the [PgMailChimp](https://github.com/earlhickey/PgMailChimp) ZF2 module
+1. Install the [PgMailchimp](https://github.com/earlhickey/PgMailchimp) ZF2 module
    by cloning it into `./vendor/`.
 2. Clone this project into your `./vendor/` directory.
 
@@ -20,11 +20,11 @@ Installation
 
     ```json
     "require": {
-        "earlhickey/PgMailChimp": "dev-master"
+        "earlhickey/PgMailchimp": "dev-master"
     }
     ```
 
-2. Now tell composer to download PgMailChimp by running the command:
+2. Now tell composer to download PgMailchimp by running the command:
 
     ```bash
     $ php composer.phar update
@@ -39,13 +39,13 @@ Installation
     return array(
         'modules' => array(
             // ...
-            'PgMailChimp',
+            'PgMailchimp',
         ),
         // ...
     );
     ```
 
-2. Copy `./vendor/earlhickey/PgMailChimp/config/mailchimp.global.php.dist` to `./config/autoload/mailchimp.global.php` and change the values as desired.
+2. Copy `./vendor/earlhickey/PgMailchimp/config/mailchimp.global.php.dist` to `./config/autoload/mailchimp.global.php` and change the values as desired.
 
 
 
