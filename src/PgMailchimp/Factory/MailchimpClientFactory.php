@@ -1,10 +1,6 @@
 <?php
-/**
- *
- * @author pG
- *
- */
-namespace PgMailchimp;
+
+namespace PgMailchimp\Factory;
 
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
