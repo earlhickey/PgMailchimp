@@ -5,7 +5,7 @@ namespace PgMailchimp\Client;
 use ZfcBase\EventManager\EventProvider;
 
 /**
- * Super-simple, minimum abstraction MailChimp API v2 wrapper
+ * MailChimp API v2 wrapper
  *
  * @author pG
  * @version 1.0
@@ -27,6 +27,7 @@ class Mailchimp extends EventProvider
 
     /**
      * Create a new instance
+     * 
      * @param string $apiKey Your MailChimp API key
      */
     function __construct($config)
@@ -49,6 +50,7 @@ class Mailchimp extends EventProvider
     /**
      * Subscribe
      * docs: http://apidocs.mailchimp.com/api/2.0/lists/subscribe.php
+     * 
      * @param object $recipient
      * @return array
      */
@@ -83,6 +85,7 @@ class Mailchimp extends EventProvider
     /**
      * Unsubscribe
      * docs: http://apidocs.mailchimp.com/api/2.0/lists/unsubscribe.php
+     * 
      * @return array
      */
 	public function unsubscribe($recipient)
@@ -104,8 +107,7 @@ class Mailchimp extends EventProvider
 
 
 	/**
-	 *
-	 * preparate the recipient data
+	 * Preparate the recipient data
 	 *
 	 * @param	array	$recipient
 	 * @return	array	$recipient
@@ -126,6 +128,7 @@ class Mailchimp extends EventProvider
 
     /**
      * Call an API method. Every request needs the API key, so that is added automatically -- you don't need to pass it in.
+     * 
      * @param  string $method The API method to call, e.g. 'lists/list'
      * @param  array  $args   An array of arguments to pass to the method. Will be json-encoded for you.
      * @return array          Associative array of json decoded API response.
@@ -138,6 +141,7 @@ class Mailchimp extends EventProvider
 
     /**
      * Performs the underlying HTTP request. Not very exciting
+     * 
      * @param  string $method The API method to be called
      * @param  array  $args   Assoc array of parameters to be passed
      * @return array          Assoc array of decoded result
@@ -157,7 +161,7 @@ class Mailchimp extends EventProvider
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, $this->verifySsl);
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($args));
-        // todo: add proxy to config file
+        // TODO: add proxy to config file
         if($this->proxy) {
 	    	curl_setopt($ch, CURLOPT_HTTPPROXYTUNNEL, 1);
 	    	curl_setopt($ch, CURLOPT_PROXYPORT, 80);

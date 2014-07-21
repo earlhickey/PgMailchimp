@@ -60,9 +60,9 @@ Installation
     $recipient->lastname = 'Doe';
     $recipient->gender = '';
     $recipient->dateOfBirth = '';
-    $recipient->email = 'john@doe.com';
+    $recipient->email = 'johndoe@domain.com';
 
-    $mailChimp = $this->mailchimp()->subscribe($recipient);
+    $subscribe = $this->mailchimp()->subscribe($recipient);
     ```
 
 3. Unsubscribe
@@ -70,7 +70,7 @@ Installation
     ```php
     //  create recipient
     $recipient = new \stdClass();
-    $recipient->email = 'john@doe.com';
+    $recipient->email = 'johndoe@domain.com';
 
-    $mailChimp = $this->mailchimp()->unsubscribe($recipient);
+    $unsubscribe = $this->mailchimp()->unsubscribe($recipient);
     ```

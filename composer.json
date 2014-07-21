@@ -1,5 +1,5 @@
 {
-  "name" : "pg-mailchimp",
+  "name" : "PgMailchimp",
   "description" : "ZF2 module for MailChimp 2.0 API",
   "version" : "1.0",
   "require" : {
@@ -12,14 +12,14 @@
     "email" : "pgroot@gmail.com",
     "homepage" : "http://pg13.nl/"
   } ],
-  "keywords" : [ "zf2" ],
+  "keywords" : [ "zf2", "mailchimp", "pg13" ],
   "autoload" : {
     "psr-0" : {
       "PgMailchimp" : "src/"
     },
     "classmap" : [ "./Module.php" ]
   },
-  "type" : "library",
   "license" : "BSD-3-Clause",
+  "type" : "library",
   "homepage" : "https://github.com/earlhickey/PgMailchimp"
 }
