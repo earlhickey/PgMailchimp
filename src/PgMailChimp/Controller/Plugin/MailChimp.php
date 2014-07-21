@@ -1,20 +1,20 @@
 <?php
 
-namespace Mailchimp\Controller\Plugin;
+namespace PgMailChimp\Controller\Plugin;
 
 use Zend\Mvc\Controller\Plugin\AbstractPlugin;
-use Mailchimp\Client\Mailchimp as MailchimpClient;
+use PgMailChimp\Client\MailChimp as MailChimpClient;
 
 /**
  * 
- * Mailchimp Controller Plugin
+ * MailChimp Controller Plugin
  * 
  * @author pG
- * @package Mailchimp
+ * @package MailChimp
  * @since 2014-06-30
  *
  */
-class Mailchimp extends AbstractPlugin
+class MailChimp extends AbstractPlugin
 {
     protected $service;
 
@@ -33,7 +33,7 @@ class Mailchimp extends AbstractPlugin
         return $this->service;
     }
 
-    public function setService(MailchimpClient $service)
+    public function setService(MailChimpClient $service)
     {
         $this->service = $service;
         return $this;

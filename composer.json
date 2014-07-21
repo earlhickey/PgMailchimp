@@ -1,5 +1,5 @@
 {
-  "name" : "earlhickey/zf2-mailchimp",
+  "name" : "PgMailChimp",
   "description" : "ZF2 module for MailChimp 2.0 API",
   "version" : "1.0",
   "require" : {
@@ -15,11 +15,11 @@
   "keywords" : [ "zf2" ],
   "autoload" : {
     "psr-0" : {
-      "Mailchimp" : "src/"
+      "PgMailChimp" : "src/"
     },
     "classmap" : [ "./Module.php" ]
   },
-  "license" : "BSD-3-Clause",
   "type" : "library",
-  "homepage" : "https://github.com/earlhickey/zf2-mailchimp"
+  "license" : "BSD-3-Clause",
+  "homepage" : "https://github.com/earlhickey/PgMailChimp"
 }

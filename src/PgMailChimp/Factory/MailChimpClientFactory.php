@@ -4,12 +4,11 @@
  * @author pG
  *
  */
-
-namespace Mailchimp\Factory;
+namespace PgMailChimp;
 
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
-use Mailchimp\Client\MailChimp;
+use PgMailChimp\Client\MailChimp;
 
 class MailChimpClientFactory implements FactoryInterface
 {
@@ -19,7 +18,7 @@ class MailChimpClientFactory implements FactoryInterface
 
         if (!isset($config['mailchimp'])) {
             throw new \RuntimeException(
-                'No config was found for MailchimpModule. Did you copy the `mailchimp.local.php` file to your autoload folder?'
+                'No config was found for PgMailChimp Module. Did you copy the `mailchimp.local.php` file to your autoload folder?'
             );
         }
 

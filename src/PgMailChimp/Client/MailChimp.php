@@ -1,6 +1,6 @@
 <?php
 
-namespace Mailchimp\Client;
+namespace PgMailChimp\Client;
 
 use ZfcBase\EventManager\EventProvider;
 
@@ -9,7 +9,7 @@ use ZfcBase\EventManager\EventProvider;
  *
  * @author pG
  * @version 1.0
- * @package Mailchimp\Client
+ * @package PgMailChimp\Client
  * @copyright 2013
  */
 class MailChimp extends EventProvider
@@ -48,7 +48,7 @@ class MailChimp extends EventProvider
 
     /**
      * Subscribe
-     * docs: http://apidocs.mailchimp.com/api/2.0/lists/subscribe.php
+     * docs: http://apidocs.MailChimp.com/api/2.0/lists/subscribe.php
      * @param object $recipient
      * @return array
      */
